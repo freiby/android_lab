@@ -8,6 +8,9 @@ import android.view.Window;
 import android.view.WindowManager;
 
 public class MainActivity extends Activity {
+	
+	WelcomeView welcomeView;
+	
 	public static int nScreenWidth = 0;
 	public static int nScreenHeight = 0;
 	@Override
@@ -23,8 +26,8 @@ public class MainActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		
-		setContentView(R.layout.sample_welcome_view);
+		welcomeView = new WelcomeView(this);
+		setContentView(welcomeView);
 	}
 
 	@Override
